@@ -2,6 +2,7 @@ import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.IOException;
+import java.util.Random;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.AudioDevice;
 import javazoom.jl.player.FactoryRegistry;
@@ -74,6 +75,19 @@ public class MusicPlayer
         catch (Exception ex) {
             reportProblem(filename);
         }
+    }
+    
+    public void startRandom()
+    {
+        int number;
+        if (track.size() > 0)
+        {
+            Random rand = new Random();
+            number = rand.nextInt(tracks.size());
+            playTrack(number);
+            
+        }
+        
     }
     
     public void stop()
