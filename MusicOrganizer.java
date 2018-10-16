@@ -1,5 +1,6 @@
-import java.util.ArrayList;
 
+import java.util.ArrayList;
+import java.util.Random;
 /**
  * A class to hold details of audio tracks.
  * Individual tracks may be played.
@@ -57,6 +58,23 @@ public class MusicOrganizer
             Track track = tracks.get(index);
             player.startPlaying(track.getFilename());
             System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
+        }
+    }
+    
+    public void shuffleNoRepeat()
+    {
+        Random rand = new Random();   
+        int number;         //hold the random number
+        ArrayList<Track> leftToPlay = new ArrayList<Track>(tracks);
+        while(leftToPlay.size() > 0)
+        {
+            
+            
+            number = rand.nextInt(leftToPlay.size());   //random number between the size which is 4
+            Track playing = leftToPlay.remove(number);  //removing a track from the array
+            System.out.println("Now playing: " + playing.getArtist() + " - " + playing.getTitle());     // printing the playing
+            player.playSample(playing.getFilename());       //play the track
+           
         }
     }
     

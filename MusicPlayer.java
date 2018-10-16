@@ -77,18 +77,7 @@ public class MusicPlayer
         }
     }
     
-    public void shuffleNoRepeat()
-    {
-        Random rand = new Random();
-        int number;
-        ArrayList<Track> leftToPlay = new ArrayList<Track>(tracks);
-        while(leftToPlay.size() > 0)
-        {
-            number = rand.nextInt(leftToPlay.size());
-            track playing = leftToPlay.remove(number);
-            player.playSample(playing.getFilename());
-        }
-    }
+    
     
     public void stop()
     {
