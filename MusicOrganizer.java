@@ -61,6 +61,9 @@ public class MusicOrganizer
         }
     }
     
+    /**
+     * Play random songs without repeating.
+     */
     public void shuffleNoRepeat()
     {
         Random rand = new Random();   
@@ -68,13 +71,10 @@ public class MusicOrganizer
         ArrayList<Track> leftToPlay = new ArrayList<Track>(tracks);
         while(leftToPlay.size() > 0)
         {
-            
-            
             number = rand.nextInt(leftToPlay.size());   //random number between the size which is 4
             Track playing = leftToPlay.remove(number);  //removing a track from the array
             System.out.println("Now playing: " + playing.getArtist() + " - " + playing.getTitle());     // printing the playing
             player.playSample(playing.getFilename());       //play the track
-           
         }
     }
     
