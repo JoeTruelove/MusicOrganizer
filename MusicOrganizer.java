@@ -135,6 +135,19 @@ public class MusicOrganizer
         player.stop();
     }
 
+    public void startRandom()
+    {
+        int number;
+        if (track.size() > 0)
+        {
+            Random rand = new Random();
+            number = rand.nextInt(tracks.size());
+            playTrack(number);
+            
+        }
+        
+    }
+    
     /**
      * Determine whether the given index is valid for the collection.
      * Print an error message if it is not.

@@ -77,18 +77,6 @@ public class MusicPlayer
         }
     }
     
-    public void startRandom()
-    {
-        int number;
-        if (track.size() > 0)
-        {
-            Random rand = new Random();
-            number = rand.nextInt(tracks.size());
-            playTrack(number);
-            
-        }
-        
-    }
     
     public void stop()
     {
