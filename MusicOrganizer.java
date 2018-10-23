@@ -72,9 +72,9 @@ public class MusicOrganizer
         while(leftToPlay.size() > 0)
         {
             number = rand.nextInt(leftToPlay.size());   //random number between the size which is 4
-            Track playing = leftToPlay.remove(number);  //removing a track from the array
-            System.out.println("Now playing: " + playing.getArtist() + " - " + playing.getTitle());     // printing the playing
             player.startPlaying(playing.getFilename());       //play the track
+            System.out.println("Now playing: " + playing.getArtist() + " - " + playing.getTitle());     // printing the playing
+            Track playing = leftToPlay.remove(number);  //removing a track from the array
         }
     }
     
